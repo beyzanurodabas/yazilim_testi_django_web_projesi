@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3schools31.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiz Sonuçları</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analiz Sonuçları</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th> Sınıf </th>
+                <th> Javadoc Satır Sayısı </th>
+                <th> Yorum Satır Sayısı </th>
+                <th> Kod Satır Sayısı </th>
+                <th> LOC </th>
+                <th> Fonksiyon Sayısı </th>
+                <th> Yorum Sapma Yüzdesi </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file_path, result in analysis_results.items %}
+                <tr>
+                    <td>{{ result.Sınıf }}</td>
+                    <td>{{ result.Javadoc_Satır_Sayısı }}</td>
+                    <td>{{ result.Yorum_Satır_Sayısı }}</td>
+                    <td>{{ result.Kod_Satır_Sayısı }}</td>
+                    <td>{{ result.LOC }}</td>
+                    <td>{{ result.Fonksiyon_Sayısı }}</td>
+                    <td>{{ result.Yorum_Sapma_Yüzdesi }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
