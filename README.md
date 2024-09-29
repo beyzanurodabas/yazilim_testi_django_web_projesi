@@ -1,4 +1,4 @@
-#Yazılım Testi Django Web Projesi
+##Yazılım Testi Django Web Projesi
 Bu proje, bir Django web uygulaması ile GitHub üzerinden klonlanan bir depo içindeki `.java` uzantılı dosyaların analiz edilmesini ve PostgreSQL veritabanına kaydedilmesini içerir. Ayrıca projede 30 birim testi ve 5 entegrasyon testi uygulanmıştır.
 
 ## Proje Özeti
